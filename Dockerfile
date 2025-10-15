@@ -9,5 +9,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Commande pour exécuter l'application
-CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["python", "openvoice/openvoice_app.py", "--share"]
 
