@@ -1,5 +1,13 @@
 FROM python:3.9-slim
 WORKDIR /app
-RUN pip install -r requirements.txt
+
+# Copiez d'abord requirements.txt et installez les dépendances
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiez le reste des fichiers
 COPY . .
+
+# Commande pour exécuter l'application
 CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "5000"]
+
